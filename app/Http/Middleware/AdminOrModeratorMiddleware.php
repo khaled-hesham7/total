@@ -18,6 +18,7 @@ class AdminOrModeratorMiddleware
         {
             // السماح فقط للمستخدمين الذين لديهم دور "admin" أو "moderator"
             if (!in_array($request->user()->role, ['admin', 'moderator'])) {
+                
                 return response()->json(['message' => 'Unauthorized. Admins or Moderators only.'], 403);
             }
     
